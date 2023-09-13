@@ -25,15 +25,15 @@ class MainScreen(Screen, Label, BoxLayout):
     back = None
     def firstBtn(self):
         sm.current = "first"
-        self.back = Clock.schedule_once(self.autoMain, 7)
+        self.back = Clock.schedule_once(self.autoMain, 20)
         
     def secondBtn(self):
         sm.current = "second"
-        self.back = Clock.schedule_once(self.autoMain, 7)
+        self.back = Clock.schedule_once(self.autoMain, 20)
         
     def thirdBtn(self):
         sm.current = "third"
-        self.back = Clock.schedule_once(self.autoMain, 7)
+        self.back = Clock.schedule_once(self.autoMain, 20)
     
     def autoMain(self, dt):
         sm.current = "main"
