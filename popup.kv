@@ -1,0 +1,26 @@
+<Button>:
+    fontname: 'myfont2-B'
+    font_size: 40
+    halign: 'center'
+    valign: 'center'
+
+
+<Label>:
+    font_name: 'myfont1.ttf'
+
+<popupscreen>:
+    popupname: root.name
+    auto_dismiss:True
+    size_hint:0.85, 0.85
+    pos_hint:{"center_x": 0.5, "center_y": 0.5}
+    title: "{} 업무 안내".format(root.popupname)
+    title_font: 'myfont1'
+    title_size: 40  
+    BoxLayout:
+        Label:
+            text: "안내"
+        Button:
+            text: "확인 (이전 화면으로)"
+            on_release:
+    
+

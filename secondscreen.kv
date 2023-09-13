@@ -1,0 +1,48 @@
+<CustomLabel@Label>:
+    font_name: 'myfont1.ttf'
+<Button@Button>
+    font_size: 85
+    font_name: 'myfont2-M.ttf'
+    halign: 'center'
+    valign: 'center'
+
+<secondscreen>:
+    
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1  # Set the color to yellow (RGB: 1, 1, 0)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        orientation: 'vertical'
+        spacing: 15
+        padding: 10
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 15
+            padding: 10
+               
+            Button:
+                text: "자동차 신규등록"
+                on_release: root.showPopup()
+            Button:
+                text: "자동차 이전등록"
+                on_release: root.showPopup()
+            Button:
+                text: "자동차 말소"
+                on_release: root.showPopup()
+        BoxLayout:      
+            orientation: 'horizontal'
+            spacing: 15
+            padding: 10
+
+            Button:
+                text: "자동차 등록 원부\n발급 / 재발급"
+                on_release: root.showPopup()
+            Button:
+                text: "저공해\n수소\n전기차"
+                on_release: root.showPopup()
+            Button:
+                text: "처음으로\n돌아가기"
+                on_release: root.mainBtn() 

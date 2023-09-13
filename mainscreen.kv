@@ -1,0 +1,62 @@
+<CostomLabelWidget@FloatLayout>:
+    Label:
+        text: "교통행정과 민원안내 서비스"
+        color: 0, 0, 0, 1
+        font_name:'myfont2-B.ttf'
+        font_size: 120
+        size_hint: None, None
+        pos_hint: {"center_x": 0.5, "top": 0.95}
+        
+    Label:
+        text: "하려는 업무를 선택하면 안내를 도와드리겠습니다"
+        color: 0, 0, 1, 1
+        font_name: 'myfont2-L.ttf'
+        font_size: 90
+        size_hint: None, None
+        pos_hint: {"center_x": 0.5, "top": 0.825}
+
+<Button@Button>:
+    font_name: 'myfont2-B.ttf'
+    background_color: 0.4, 1, 0.36, 1
+    #size_hint: (0.3, 0.7)
+    halign: 'center'
+    valign: 'center'
+
+
+<MainScreen>:
+    name : "main"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1  # Set the color to yellow (RGB: 1, 1, 0)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            CostomLabelWidget:
+        Button:
+            text:"소리"
+            font_size: 40
+            pos_hint: {"x": 0, "top": 1}
+            size_hint: (0.07, 0.15)
+
+        BoxLayout:
+            orientation: 'horizontal'
+            pos_hint: {"center_x": 0.5, "center_y": 0.375}
+            size_hint: (1, 0.7)
+            padding: 40
+            spacing: 40
+
+            Button:
+                text:"이륜차 업무\n등록\n폐지\n이전\n등록 원부 발급"
+                font_size: 90
+                on_release: root.firstBtn()
+            Button:
+                text:"자동차  업무\n이전\n신규\n말소\n등록 원부 발급"
+                font_size: 90
+                on_release: root.secondBtn()
+            Button:
+                text:"기타 업무\n택시/화물\n건설 기계\n의무 보험"
+                font_size: 90
+                on_release: root.thirdBtn()
